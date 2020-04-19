@@ -1,0 +1,27 @@
+{% extends 'base.html' %} 
+{% block title %}
+  {{naslov}}
+{% endblock %}
+{% block body %}
+<div style="width: 100%; height: 15vh;" class="bg-info mb-3 d-flex align-items-center justify-content-between text-light">
+    <div class="p-5"><a href="javascript:history.back()" class="text-light"><h4>Nazad</h4></a></div>
+    <div style="text-align: center;"><h1>{{ naslov }}</h1></div>
+    <div class="p-5"><a href="/" class="text-light"><h4>Početna</h4></a></div>
+</div>
+<div class="container">
+<div class="row">
+  {% for post in posts %}
+<div class="col-sm-6 col-md-4 col-lg-3 mt-4 mb-3">
+  <div class="card border-{{ post['tip'] }}">
+    <div class="card-body">
+      <h6 class="card-title">{{ post['naslov'] }}</h5>
+      <p class="card-text">{{ post['opis'] }}</p>
+      <p class="card-text"><small class="text-muted">{{post['vreme']}}</small></p>
+      <a href="{{ post['link'] }}" class="btn btn-{{ post['tip'] }}">Pročitaj više</a>
+    </div>
+  </div>
+</div>
+{% endfor %}
+</div>
+</div>
+{% endblock %}
