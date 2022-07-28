@@ -10,6 +10,16 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         Vest.objects.all().delete()
+        Izvor.objects.all().delete()
+
+        Izvor.objects.create(naziv='Diskretne matematičke strukture', slug='diskretne-matematicke-strukture', godina=2, semestar=4)
+        Izvor.objects.create(naziv='Numerička analiza', slug='numericka-analiza', godina=2, semestar=4)
+        Izvor.objects.create(naziv='Finansijski menadžment i računovodstvo', slug='finansijski-menadzment-i-racunovodstvo', godina=2, semestar=4)
+        Izvor.objects.create(naziv='Statistika', slug='statistika', godina=2, semestar=4)
+        Izvor.objects.create(naziv='Strukture podataka i algoriitmi', slug='strukture-podataka-i-algoriitmi', godina=2, semestar=4)
+        Izvor.objects.create(naziv='Menadžment tehnologije i razvoja', slug='menadzment-tehnologije-i-razvoja', godina=2, semestar=4)
+        Izvor.objects.create(naziv='Osnovne studije', slug='', godina=0, semestar=0)
+
         novi = vesti_osnovne_studije()
         novi.reverse()
 

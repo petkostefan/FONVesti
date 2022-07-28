@@ -39,9 +39,9 @@ Installation is done in few easy steps:
 Clone the repository and create a virtual env:
 ```sh
 git clone https://github.com/petkostefan/FONVesti.git
+cd FONVesti
 python -m venv venv
 venv/Scripts/activate
-cd FONVesti
 ```
 Install requirements:
 ```python
@@ -54,12 +54,11 @@ https://www.rabbitmq.com/install-windows.html#installer
 
 After that we need to create .env file in folder fonvesti and write down our secret key, but before that we need to generate it.
 ```sh
-cd fonevsti
 py mange.py generatekey
 ```
-.env file should look like this:
+In folder FONVesti/fonvesti create file named '.env'. It's content should look like this:
 ```
-SECRET_KEY = %YOUR_KEY_HERE%
+SECRET_KEY = %PASTE_YOUR_GENERATED_KEY_HERE%
 ````
 
 Now, if you want to send mails from (google account), you will need to enable 2-Step Verification and App passwords.
