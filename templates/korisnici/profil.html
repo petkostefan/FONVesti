@@ -1,0 +1,33 @@
+{% extends 'base.html' %} 
+{% load crispy_forms_tags %}
+{% block title %}
+Profil
+{% endblock %}
+{% block heading %}
+Zdravo, {{profil.ime}}
+{% endblock %}
+{% block body %}
+<div class="d-flex justify-content-center">
+    <div class=" mt-5 card card-body border-info" style="max-width: 900px;">
+    <div class="p-3">
+        <h4 class="m-2">Ime: {{profil.ime}}</h4>
+        <h4 class="m-2">Prezime: {{profil.prezime}}</h4>
+        <h4 class="m-2">Email: {{profil.email}}</h4>
+        <h4 class="m-2">Korisničko ime: {{profil.username}}</h4>
+    </div>
+    <div class="p-3">
+        <h5 class="mb-3">Vaša interesovanja: </h5>
+        <ul class="list-group">
+            {% for interesovanje in interesovanja %}
+            <li class="list-group-item">
+                {{ interesovanje.izvor }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="mt-4">
+       <a href="{% url 'interesovanja' %}"><button class="btn btn-primary">Uredi interesovanja</button></a>
+    </div>
+</div>
+</div>
+{% endblock %}

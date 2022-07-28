@@ -1,0 +1,153 @@
+{% extends 'base.html' %} 
+{% block title %}
+  Izbor semestra
+{% endblock %}
+{% block heading %}
+IZBOR SEMESTRA
+{% endblock %}
+{% block body %}
+<div class="container">
+  <h5 class="text-center text-info mt-2">Izaberite semestar ili predmet</h5>
+<div class="row">
+<div class="col-sm-6 col-md-6 col-lg-6 mt-4 mb-3">
+  <div class="card border-info shadow-sm">
+    <h5 class="card-header p-4"><a href="/cetvrti" onclick="myFunction()" class="text-info">Prvi semestar</a></h5>
+    <div class="card-body">
+      <table class="table mt-1 table-hover">
+        <tbody>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="#">Matematika 1</a></td>
+          </tr>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="#">Ekonomija</a></td>
+          </tr>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="#">Menadzment</a></td>
+          </tr>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="#">Osnove informaciono komunikacionih tehnologija</a></td>
+          </tr>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="#">Psihologija</a></td>
+          </tr>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="#">Engleski jezik struke 1</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="/cetvrti" onclick="myFunction()" class="btn btn-info"><span class="spinner-border spinner-border-sm" style="display: none;" id="spiner1" role="status" aria-hidden="true"></span> Pogledaj vesti</a>
+    </div>
+  </div>
+</div>
+<div class="col-sm-6 col-md-6 col-lg-6 mt-4 mb-3">
+  <div class="card border-info shadow-sm">
+    <h5 class="card-header p-4"><a href="/cetvrti" onclick="myFunction2()" class="text-info">Drugi semestar</a></h5>
+    <div class="card-body">
+      <table class="table mt-1 table-hover">
+        <tbody>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="#">Francuski jezik struke 1</a></td>
+          </tr>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="#">Matematika 2</a></td>
+          </tr>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="#">Programiranje 1</a></td>
+          </tr>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="#">Osnovi organizacije</a></td>
+          </tr>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="#">Proizvodni sistemi</a></td>
+          </tr>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="#">Uvod u informacione sisteme</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="/cetvrti" onclick="myFunction2()" class="btn btn-info"><span class="spinner-border spinner-border-sm" style="display: none;" id="spiner2" role="status" aria-hidden="true"></span> Pogledaj vesti</a>
+    </div>
+  </div>
+</div>
+<div class="col-sm-6 col-md-6 col-lg-6 mt-4 mb-3">
+  <div class="card border-info shadow-sm">
+    <h5 class="card-header p-4"><a href="/cetvrti" onclick="myFunction3()" class="text-info">Treći semestar</a></h5>
+    <div class="card-body">
+      <table class="table mt-1 table-hover">
+        <tbody>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="#">Arhitektura računara i operativni sistemi</a></td>
+          </tr>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="#">Programiranje 2</a></td>
+          </tr>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="#">Matematika 3</a></td>
+          </tr>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="#">Marketing</a></td>
+          </tr>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="#">Teorija verovatnoće</a></td>
+          </tr>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="#">Engleski jezik struke 2</a></td>
+          </tr>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="#">Francuski jezik struke 2</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="/cetvrti" onclick="myFunction3()" class="btn btn-info"> <span class="spinner-border spinner-border-sm" style="display: none;" id="spiner3" role="status" aria-hidden="true"></span> Pogledaj vesti</a>
+    </div>
+  </div>
+</div>
+<div class="col-sm-6 col-md-6 col-lg-6 mt-4 mb-3">
+  <div class="card border-info shadow-sm">
+    <h5 class="card-header p-4"><a href="/cetvrti" onclick="myFunction4()" class="text-info">Četvrti semestar</a></h5>
+    <div class="card-body">
+      <table class="table mt-1 table-hover">
+        <tbody>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="predmet/strukture-podataka-i-algoriitmi">Strukture podataka i algoritmi</a></td>
+          </tr>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="predmet/statistika">Statistika</a></td>
+          </tr>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="predmet/menadzment-tehnologije-i-razvoja">Menadžment tehnologije i razvoja</a></td>
+          </tr>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="predmet/finansijski-menadzment-i-racunovodstvo">Finansijski menadžment i računovodstvo</a></td>
+          </tr>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="predmet/numericka-analiza">Numerička analiza</a></td>
+          </tr>
+          <tr>
+            <td class="border-info"><a class="text-dark" href="predmet/diskretne-matematicke-strukture">Diskretne matematičke strukture</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="/cetvrti" onclick="myFunction4()" class="btn btn-info"><span class="spinner-border spinner-border-sm" style="display: none;" id="spiner4" role="status" aria-hidden="true"></span> Pogledaj vesti</a>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<script>
+  function myFunction() {
+    document.getElementById("spiner1").setAttribute("style", "display: inline-block")
+  }
+  function myFunction2() {
+    document.getElementById("spiner2").setAttribute("style", "display: inline-block")
+  }
+  function myFunction3() {
+    document.getElementById("spiner3").setAttribute("style", "display: inline-block")
+  }
+  function myFunction4() {
+    document.getElementById("spiner4").setAttribute("style", "display: inline-block")
+  }
+  </script>
+{% endblock %}
+
+

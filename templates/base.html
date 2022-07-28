@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body class="bg-light">
+  <div style="width: 100%; height: 15vh;"
+    class="bg-info mb-3 d-flex align-items-center justify-content-between text-light">
+    <div class="dropdown p-5">
+      <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false" style="font-size: 24px; font-weight: 500;">
+        Meni
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <a class="dropdown-item" href="{% url 'pocetna' %}">Početna</a>
+        <a class="dropdown-item" href="{% url 'izbor-semestra' %}">Semestri</a>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <h1>{% block heading %}{% endblock %}</h1>
+    </div>
+    {% if user.is_anonymous %}
+    <div class="p-5">
+      <a href="{% url 'login' %}" class="text-light">
+        <h4>Uloguj se </h4>
+      </a>
+      <a href="{% url 'registracija' %}" class="text-light">
+        <h4> Registruj se</h4>
+      </a>
+    </div>
+    {% else %}
+      {% if user.is_superuser %}
+      <div class="p-5"><a href="/admin" class="text-light"><h4>Profil</h4></a>
+      <a href="{% url 'logout' %}" class="text-light">
+        <h4>Izloguj se</h4>
+      </a>
+    </div>
+      {% else %}
+      <div class="p-5">
+        <a href="{% url 'profil' %}" class="text-light">
+          <h4>Profil</h4>
+        </a>
+        <a href="{% url 'logout' %}" class="text-light">
+          <h4>Izloguj se</h4>
+        </a>
+      </div>
+      {% endif %}
+    {% endif %}
+  </div>
+  {% if messages %}
+    <div class="d-flex justify-content-center">
+      {% for message in messages %}
+      <div class="alert alert-warning" {% if message.tags %} class="alert  alert-{{ message.tags }}" {% endif %} role="alert">
+        {{ message }}
+    </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+  {% block body %} {% endblock %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/infinite.min.js' %}"></script>
+  <script>
+    var infinite = new Waypoint.Infinite({
+
+      element: $('.infinite-container')[0],
+      offset: 'bottom-in-view'
+    });
+  </script>
+</body>
+</html>

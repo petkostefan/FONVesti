@@ -1,0 +1,26 @@
+{% extends 'base.html' %} 
+{% block title %}
+Četvrti semestar
+{% block heading %}
+{{ vesti.0.izvor }}
+{% endblock %}
+{% endblock %}
+{% block body %}
+<div class="container">
+<div class="row">
+  {% for post in vesti %}
+<div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+  <div class="card border-{{ post.tip }}">
+    <div class="card-header"><a href="{{ post.url }}" class="text-{{post.tip}}"><h5>{{ post.izvor }}</h5></a></div>
+    <div class="card-body">
+      <h6 class="card-title">{{ post.naslov }}</h5>
+      <p class="card-text">{{ post.opis }}</p>
+      <p class="card-text"><small class="text-muted">{{post.vreme}}</small></p>
+      <a href="{{ post.link }}" class="btn btn-{{post.tip}}">Pročitaj više</a>
+    </div>
+  </div>
+</div>
+{% endfor %}
+</div>
+</div>
+{% endblock %}

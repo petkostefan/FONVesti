@@ -1,0 +1,33 @@
+{% extends 'base.html' %} 
+{% block title %}
+  Vesti osnovne studije
+{% endblock %}
+{% block heading %}
+VESTI OSNOVNE STUDIJE
+{% endblock %}
+{% block body %}
+<div class="container">
+<div class="row infinite-container justify-content-center">
+  {% for post in posts %}
+<div class="m-3 shadow-sm infinite-item" style="max-width: 800px;">
+  <div class="card border-info">
+    <div class="card-body">
+      <h5 class="card-title"><span class="badge badge-warning mr-2">{{ post.tip }}</span>{{ post.naslov }}</h5>
+    {% if post.img_link %}
+    </div>
+    <img class="img-fluid" src="{{ post.img_link }}" alt="{{ post.naslov }}">
+    <div class="card-body">
+    {% endif %}
+      <p class="card-text">{{ post.opis }}</p>
+      <p class="card-text"><small class="text-muted">{{ post.vreme }}</small></p>
+      <a href="{{ post.link }}" class="btn btn-info">Pročitaj više</a>
+    </div>
+  </div>
+</div>
+  {% endfor %}
+</div>
+{% if page_obj.has_next %}
+<a class="infinite-more-link" href="?page={{ page_obj.next_page_number }}">next</a>
+{% endif %}
+</div>
+{% endblock %}
