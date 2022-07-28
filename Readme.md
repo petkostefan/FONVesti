@@ -61,7 +61,7 @@ In folder FONVesti/fonvesti create file named '.env'. It's content should look l
 SECRET_KEY = %PASTE_YOUR_GENERATED_KEY_HERE%
 ````
 
-Now, if you want to send mails from (google account), you will need to enable 2-Step Verification and App passwords.
+Now, if you want to send mails (from google account), you will need to enable 2-Step Verification and App passwords.
 It is pretty straihgt forward. Go to Manage your Google account > Security and enable these features. Don't forget to copy the 16 character password you get.
 After copying the password update .env file:
 ```
@@ -70,6 +70,14 @@ SECRET_KEY = %YOUR_KEY_HERE%
 EMAIL_HOST_USER = %YOUR_EMAIL_HERE%
 EMAIL_HOST_PASSWORD = %YOUR_16CHAR_PASSWORD_HERE%
 ````
+For example:
+```
+SECRET_KEY = -cm39v=xg&=2vnhb9e_e#wi@xx%^g)n_rea)prgagqdqr=24@h
+
+EMAIL_HOST_USER = johndoe@gmail.com
+EMAIL_HOST_PASSWORD = 16charpassword16
+```
+
 
 Migrate database:
 ```
@@ -89,7 +97,7 @@ py manage.py resetdatabase
 This will delete all previous news and update every topic with 5 latest news.
 
 Finally we can start everything up. Paste each command in a new terminal.
-1. Run the server:
+1. Run the server and open the website in browser:
 ```
 py manage.py runserver
 ```
@@ -109,4 +117,4 @@ Simulate a new post by deleting the last one with the following command:
 ```
 py manage.py deletelastpost
 ```
-You should recieve an email notification with a link to the new post.
+After a few secconds, you should recieve an email notification with a link to the new post.
