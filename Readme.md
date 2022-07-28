@@ -118,3 +118,14 @@ Simulate a new post by deleting the last one with the following command:
 py manage.py deletelastpost
 ```
 After a few secconds, you should recieve an email notification with a link to the new post.
+
+# API
+| Method | Endpoint | Desccription |
+| - | - | - |
+| GET | /api | Shows API endpoints |
+| GET | /api/vesti-osnovne-studije/<int:number-of-news> | Lists news |
+| GET | /api/poslednja-vest-osnovne-studije | Returns last post |
+| GET | /api/vesti-semestar/<int:semester-number> | List last post from every subject in given semester |
+| GET | /api/poslednja-vest-predmet/<str:subject-name-slug> | Returns last post from given subject |
+| GET | /api/vesti-predmet/<str:predmet>/<int:number-of-news> | Lists given numer of news from forwarded subject |
+| GET | /api/izvori | Lists all sources (categories) |
