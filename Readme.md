@@ -17,6 +17,7 @@ Django runs the website, meanwhile Celery dispaches two tasks, both scraping new
 # Tech
  - Frontend: Bootstrap
  - Backend: Django
+ - API: Django REST Framework
  - Database: Sqlite3
  - Scraping: BeautifulSoup4
  - Task scheduler: Celery
